@@ -779,7 +779,7 @@ process Hisat2Align {
     aligner == "hisat2"
 
     script:
-    index_base = index[0].toString() - ~/(\.exon)?(\.\d)?(\.fa)?(\.gtf)?(\.ht2)?$/
+    index_base = index[0].toString() - ~/(\.exon)?(\.\d)?(\.fa)?(\.gtf)?(\.ss)?(\.ht2)?$/
     if (reads_single_end) {
         """
         hisat2  --summary-file ${sample_name}_hisat2_summary.txt\
